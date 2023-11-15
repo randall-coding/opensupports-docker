@@ -1,0 +1,49 @@
+containers: {
+    website: {
+        image: "gamelaster/opensupports:latest"
+        ports: publish: [
+            "80:80"
+        ]
+        env: {
+            TIMEZONE: "secret://env/timezone"
+        }
+        dirs: {
+            // "/config": "volume://data?subpath=web"
+            "/config": "volume://config"
+        }
+        dependsOn: ["mariadb"]
+    }
+    mariadb: {
+        image: "mariadb"
+        dirs: {
+            // "/var/lib/mysql": "volume://data?subpath=db"
+            "/var/lib/mysql": "volume://db"
+        }
+        env: {
+            MYSQL_USER: "opensupports"
+            MYSQL_DATABASE: "opensupports"
+            MYSQL_RANDOM_ROOT_PASSWORD: "true"
+            MYSQL_PASSWORD: "secret://env/mysql_password"
+        }
+    }
+}
+
+secrets: env: {
+    external: "opensupports"
+}
+
+// TODO trying to use subpath, but volume hangs on provisioning
+// volumes: data: {
+//     size: "10G"
+//     accessModes: "readWriteMany"
+// }
+
+// volumes: db: {
+//     size: "1G"
+//     accessModes: "readWriteOnce"
+// }
+
+// volumes: config: {
+//     size: "1G"
+//     accessModes: "readWriteOnce"
+// }
