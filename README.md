@@ -22,3 +22,9 @@ Now, browse to `http://yourip:5443/`, and proceed through installation. When it 
 - MySQL Password: `password you written in previous step`
 
 And that's all.
+
+# Issues
+
+* Issue refreshing the page during install.
+<br> Can be fixed by opening up a new private window 
+https://github.com/gamelaster/opensupports-docker/issues/8
