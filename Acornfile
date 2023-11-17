@@ -2,7 +2,7 @@ containers: {
     website: {
         image: "gamelaster/opensupports:latest"
         ports: publish: [
-            "80:80"
+            "80/http"
         ]
         env: {
             TIMEZONE: "secret://env/timezone"
@@ -13,20 +13,56 @@ containers: {
         }
         dependsOn: ["mariadb"]
     }
-    mariadb: {
-        image: "mariadb"
-        dirs: {
-            // "/var/lib/mysql": "volume://data?subpath=db"
-            "/var/lib/mysql": "volume://db"
-        }
-        env: {
-            MYSQL_USER: "opensupports"
-            MYSQL_DATABASE: "opensupports"
-            MYSQL_RANDOM_ROOT_PASSWORD: "true"
-            MYSQL_PASSWORD: "secret://env/mysql_password"
-        }
+    // mariadb: {
+    //     image: "mariadb"
+    //     ports: {
+    //         expose: ["3306:3306/tcp"]
+    //     }
+    //     dirs: {
+    //         // "/var/lib/mysql": "volume://data?subpath=db"
+    //         "/var/lib/mysql": "volume://db"
+    //     }
+    //     env: {
+    //         MYSQL_USER: "opensupports"
+    //         MYSQL_DATABASE: "opensupports"
+    //         MYSQL_RANDOM_ROOT_PASSWORD: "true"
+    //         MYSQL_PASSWORD: "secret://env/mysql_password"
+    //     }
+    // }
+}
+
+// services: db: {
+//     default:   true
+//     container: "mariadb"
+//     secrets: ["admin", "user"]
+//     ports: "3306"
+//     env: {ABC: "XYZ"} // Error on this field.  env or environment.  
+//     data: dbName: "instance"
+// }
+
+services: mariadb: {
+    image: "ghcr.io/acorn-io/mariadb:v10.#.#-#" // pulls the latest 1.x version
+    environment: {
+        MYSQL_USER: "opensupports"
+        MYSQL_DATABASE: "opensupports"
+        MYSQL_RANDOM_ROOT_PASSWORD: "true"
+        MYSQL_PASSWORD: "secret://env/mysql_password"
     }
 }
+
+// services: db: {
+//     default:   true
+//     container: "mariadb"
+//     secrets: ["admin", "user"]
+//     ports: "3306"
+//     data: dbName: "instance"
+//     environment: {
+//         MYSQL_USER: "opensupports"
+//         MYSQL_DATABASE: "opensupports"
+//         MYSQL_RANDOM_ROOT_PASSWORD: "true"
+//         MYSQL_PASSWORD: "secret://env/mysql_password"
+//     }
+// }
 
 secrets: env: {
     external: "opensupports"
@@ -38,12 +74,12 @@ secrets: env: {
 //     accessModes: "readWriteMany"
 // }
 
-// volumes: db: {
-//     size: "1G"
-//     accessModes: "readWriteOnce"
-// }
+volumes: db: {
+    size: "1G"
+    accessModes: "readWriteOnce"
+}
 
-// volumes: config: {
-//     size: "1G"
-//     accessModes: "readWriteOnce"
-// }
+volumes: config: {
+    size: "1G"
+    accessModes: "readWriteOnce"
+}
