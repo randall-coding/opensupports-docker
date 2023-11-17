@@ -1,4 +1,4 @@
-# Self host an Open Supports server
+# Self Host a Support Ticket Server
 
 ## Open Supports
 Open Supports is a simple and elegant support ticket solution which you can host yourself.  As the name implies, Open Supports is open source and free to use when self hosted.        
@@ -51,6 +51,7 @@ acorn secret create \
 ## Deploying Acorn
 Now that we have our secret file we can deploy our server from a pre-made image with just a click.
 [CLICK HERE](link) to deploy.
+
 [image](deploy image)
 
 Now visit the dashboard and find your recent deployment.  Click on the name of your deployment and find the endpoint section in the right panel.  Click "copy" on the website endpoint and visit the link.
@@ -89,3 +90,9 @@ Visit http://localhost:5543/admin to login with your admin email and password.
 Create your first ticket by clicking the "Ticket" tab in the nav bar and then "+ Create Ticket"
 
 You've now created your first ticket.
+
+## References 
+
+* [Setting up SMTP](https://www.youtube.com/watch?v=dEtALRMdOhs).
+* [OpenSupports installation guide](https://docs.opensupports.com/guides/installation/)
+* [OpenSupports documentation](https://docs.opensupports.com/)
