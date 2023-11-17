@@ -3,16 +3,16 @@
 ## Open Supports
 Open Supports is a simple and elegant support ticket solution which you can host yourself.  As the name implies, Open Supports is open source and free to use when self hosted.        
 
-The software allows customers to reach out to you with support tickets sent to the appropriate department at your company. Email alerts will be automatically sent to the appropriate admin user to manage those tickets **??????**.  The server can be configured to allow anonymous customer submissions or require a logged in user.   
+The software allows customers to reach out to you with support tickets sent to the appropriate department at your company. Email alerts will be automatically sent to the appropriate users to manage those tickets.  The server can be configured to allow anonymous customer submissions or require a logged in user to create a ticket.   
 
-The best part is a server can be setup in minutes when using a pre-made acorn image.
+The best part is a server can be setup in minutes using a pre-made acorn image.
 
 ## What is Acorn? 
 
 Acorn is a new cloud platform that allows you to easily deploy, develop and manage web services with containerization.  A single acorn image can deploy all that you need: from a single container webserver, to a multi service Kubernetes cluster with high availability.  Don't worry if you don't understand what all those terms mean; we don't have to know that in order to deploy our server.
 
 ## Setup Acorn Account
-Setup an acorn account at (acorn.io)[https://acorn.io].  This can just be a free account, but if you'd like additional storate space you can look into the pro account or above
+Setup an acorn account at [acorn.io](https://acorn.io).  This can just be a free account, but if you'd like additional storate space you can look into the pro account or above
 
 ## Install acorn cli 
 First we need to install acorn-cli locally.  Choose an install method from the list below:
@@ -50,7 +50,8 @@ acorn secret create \
 
 ## Deploying Acorn
 Now that we have our secret file we can deploy our server from a pre-made image with just a click.
-[CLICK HERE](link) to deploy.
+
+[CLICK HERE](link) to deploy. Just click "Deploy" in the bottom right corner.
 
 [image](deploy image)
 
