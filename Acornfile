@@ -16,7 +16,7 @@ containers: {
 }
 
 services: mariadb: {
-    image: "ghcr.io/acorn-io/mariadb:v10.#.#-#" // pulls the latest 10.x version
+    image: "ghcr.io/acorn-io/mariadb:v10.#.#-#"
     secrets: [
         "user: user"
     ]
