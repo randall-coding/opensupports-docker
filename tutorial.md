@@ -45,9 +45,12 @@ The server has several basic settings controlled by a secret object.
 Create secrets for your application using acorn-cli.  Change the <> values to your actual credentials.
 ```
 acorn secret create \
- --data mysql_password=<uspassword> \
  --data timezone=<timezone> \
    opensupports
+```
+
+```
+acorn secret create mariadb-user --data username=<db username> --data password=<db password>
 ```
 
 ## Deploying Acorn
