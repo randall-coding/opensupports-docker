@@ -57,7 +57,7 @@ acorn secret create mariadb-user --data username=<db username> --data password=<
 ## Deploying Acorn
 Now that we have our secret file we can deploy our server from a pre-made image with just a click.
 
-[CLICK HERE](link) to deploy. You should see a screen like the one below.
+[CLICK HERE](https://acorn.io/run/opensupports?ref=randall-coding) to deploy. You should see a screen like the one below.
 
 ![deploy_link_open_supports](https://github.com/randall-coding/opensupports-docker/assets/39175191/275cedeb-6b3a-4b1f-a462-48276b105758)
 
