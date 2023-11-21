@@ -39,7 +39,8 @@ Back in our local command terminal login to acorn.io with: <br>
 
 ## Setup Server
 The server has several basic settings controlled by a secret object.  
- * **mysql_password** - database password
+ * **username** - database username
+ * **password** - database password
  * **timezone** - your timezone in <country>/<city> format.  ex. Europe/Bratislava
 
 Create secrets for your application using acorn-cli.  Change the <> values to your actual credentials.
@@ -54,7 +55,7 @@ acorn secret create mariadb-user --data username=<db username> --data password=<
 ```
 
 ## Deploying Acorn
-Now that we have your secret file we can deploy your server from a pre-made image with just a click.
+Now that we have our secret file we can deploy our server from a pre-made image with just a click.
 
 [CLICK HERE](link) to deploy. You should see a screen like the one below.
 
