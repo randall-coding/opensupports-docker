@@ -39,8 +39,6 @@ Back in our local command terminal login to acorn.io with: <br>
 
 ## Setup Server
 The server has several basic settings controlled by a secret object.  
- * **username** - database username
- * **password** - database password
  * **timezone** - your timezone in <country>/<city> format.  ex. Europe/Bratislava
 
 Create secrets for your application using acorn-cli.  Change the <> values to your actual credentials.
