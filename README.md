@@ -53,13 +53,21 @@ acorn secret create mariadb-user --data username=<db username> --data password=<
 ```
 
 ## Deploying Acorn
-Now that we have our secret file we can deploy our server from a pre-made image with just a click.
+Now that we have our secret file we can deploy our server from an acorn image with just a few simple commands.
 
-[CLICK HERE](https://acorn.io/run/opensupports?ref=randall-coding) to deploy. You should see a screen like the one below.
+Clone the repo locally if you haven't already with:
 
-![deploy_link_open_supports](https://github.com/randall-coding/opensupports-docker/assets/39175191/275cedeb-6b3a-4b1f-a462-48276b105758)
+`git clone https://github.com/randall-coding/opensupports-docker.git`
 
-Now visit the dashboard and find your recent deployment.  Click on the name of your deployment and find the endpoint section in the right panel.  Click "copy" on the website endpoint and visit the link.
+Next build and run.
+
+`acorn build -t opensupports`
+
+`acorn run -s opensupports:opensupports -s  mariadb-user:mariadb-user -n opensupports opensupports`
+
+Visit your acorn dashboard to see if your deployment was successful.
+
+Click on the name of your deployment and find the endpoint section in the right panel.  Click "copy" on the website endpoint and visit the link.
 
 ## Setup Open Support
 When you visit your endpoint, you should now see the Open Support installation page.  <br><small>(NOTE: If you have an error on refreshing the page, access the link in a new private window to fix it)</small>
